@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <link href="/styles.css" rel="stylesheet" />
+    <title>Big Cats Collections</title>
+</head>
+<body>
+<h1>Big Cats Collection</h1>
+
+<ul>
+    <li th:each="bigcat : ${feline}" th:text="${feline}"></li>
+</ul>
+
+<form method="post" action="/add_bigcat">
+    <p>
+    <label for="id">ID of Cat:</label><br/>
+    <input type="number" name="id" id="id" />
+    </p>
+
+    <p>
+      <label for="family">Family:</label><br />
+        <input type="text" name="family" id="family" />
+    </p>
+
+    <p>
+        <label for="genus">Genus:</label><br />
+        <input type="text" name="genus" id="genus" />
+    </p>
+
+    <p>
+        <label for="species">Species:</label><br />
+        <input type="text" name="species" id="species" />
+    </p>
+
+    <p>
+        <label for="criticallyEndangered">Critically Endangered:</label><br />
+        <input type="checkbox" name="criticallyendangered" id="criticallyEndangered" />
+    </p>
+
+    <p>
+        <label for="endangered">Endangered:</label><br />
+        <input type="checkbox" name="endangered" id="endangered" />
+    </p>
+
+    <p>
+        <label for="threatened">Threatened:</label><br />
+        <input type="checkbox" name="threatened" id="threatened" />
+    </p>
+
+    <p>
+        <label for="population">Population:</label><br />
+        <input type="number" name="population" id="population" />
+    </p>
+
+    <p>
+        <label for="image">Image:</label><br />
+        <input type="text" name="image" id="image" />
+    </p>
+
+    <p>
+        <input type="submit" value="RAWR" />
+    </p>
+</form>
+
+<form method="post" action="/deleteBigCat">
+    <input type="number" name="id" />
+    <input type="submit"/>
+</form>
+
+</body>
+</html>
